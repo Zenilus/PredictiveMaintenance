@@ -1,0 +1,8 @@
+Error Details:
+Time: 30-Nov-2024 12:04:13
+Message: Undefined function 'categories' for input arguments of type 'double'.
+Stack trace:
+create_network_config: line 3
+train_ensemble: line 8
+train_model: line 21
+main: line 9

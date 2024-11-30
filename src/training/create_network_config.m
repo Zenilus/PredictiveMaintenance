@@ -1,53 +1,43 @@
-function [layers, options] = create_network_config(X_train, Y_train_cat, X_val, Y_val_cat)
-    inputSize = size(X_train, 2);
+function [layers, options] = create_network_config(X_train, Y_train, X_val, Y_val)
+    % Get dimensions
+    inputSize = size(X_train, 2);    % should be 8
+    numClasses = 6;                  % We now know we have 6 classes
     
-    % Get number of classes from categorical array
-    numClasses = length(categories(Y_train_cat));
+    fprintf('Network configuration:\n');
+    fprintf('Input size: %d\n', inputSize);
+    fprintf('Number of classes: %d\n', numClasses);
     
-    % Calculate class weights using categorical data
-    class_counts = countcats(Y_train_cat);
-    class_weights = 1 ./ class_counts;
-    class_weights = class_weights / sum(class_weights) * numClasses;
+    % Convert labels to categorical
+    Y_train_cat = categorical(Y_train);
+    Y_val_cat = categorical(Y_val);
     
     layers = [
         featureInputLayer(inputSize, 'Name', 'input')
         
-        % First block with residual connection
+        % Hidden layers
         fullyConnectedLayer(512, 'Name', 'fc1')
         batchNormalizationLayer('Name', 'bn1')
         reluLayer('Name', 'relu1')
         dropoutLayer(0.3, 'Name', 'drop1')
         
-        % Second block with increased capacity
-        fullyConnectedLayer(1024, 'Name', 'fc2')
+        fullyConnectedLayer(256, 'Name', 'fc2')
         batchNormalizationLayer('Name', 'bn2')
         reluLayer('Name', 'relu2')
         dropoutLayer(0.3, 'Name', 'drop2')
         
-        % Third block with skip connection
-        fullyConnectedLayer(512, 'Name', 'fc3')
-        batchNormalizationLayer('Name', 'bn3')
-        reluLayer('Name', 'relu3')
-        dropoutLayer(0.3, 'Name', 'drop3')
-        
-        % Final classification layers
-        fullyConnectedLayer(numClasses, 'Name', 'fc_out')
+        % Output layer
+        fullyConnectedLayer(numClasses, 'Name', 'fc_out')  % Changed to 6 classes
         softmaxLayer('Name', 'softmax')
-        weightedClassificationLayer(class_weights) % Simplified constructor call
+        classificationLayer('Name', 'classification')
     ];
     
-    % Updated training options
     options = trainingOptions('adam', ...
         'InitialLearnRate', 0.001, ...
-        'LearnRateSchedule', 'piecewise', ...
-        'LearnRateDropFactor', 0.1, ...
-        'LearnRateDropPeriod', 20, ...
-        'MaxEpochs', 100, ...
+        'MaxEpochs', 50, ...
         'MiniBatchSize', 128, ...
-        'L2Regularization', 0.001, ...
         'ValidationData', {X_val, Y_val_cat}, ...
         'ValidationFrequency', 30, ...
-        'ValidationPatience', 10, ...
+        'ValidationPatience', 5, ...
         'Shuffle', 'every-epoch', ...
         'Verbose', true, ...
         'VerboseFrequency', 20, ...

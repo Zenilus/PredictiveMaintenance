@@ -1,0 +1,7 @@
+Error Details:
+Time: 30-Nov-2024 12:38:13
+Message: Training data missing some classes
+Stack trace:
+load_and_preprocess_data: line 38
+train_model: line 3
+main: line 9

@@ -1,0 +1,7 @@
+Error Details:
+Time: 30-Nov-2024 12:02:48
+Message: Error: <a href="matlab: opentoline('D:\#UNIDEB\MatLab\PredictiveMaintenance\src\training\train_ensemble.m',1,10)">File: train_ensemble.m Line: 1 Column: 10</a>
+Unable to classify the variable 'model' in the body of the parfor-loop. For more information, see <a href="matlab: helpview([docroot '/parallel-computing/distcomp_ug.map'],'MIR_ERROR_PARFOR_BAD_TEMPORARY_VARIABLE')">Parallel for Loops in MATLAB, "Solve Variable Classification Issues in parfor-Loops"</a>.
+Stack trace:
+train_model: line 21
+main: line 9

@@ -1,0 +1,7 @@
+Error Details:
+Time: 30-Nov-2024 12:24:38
+Message: Need to identify correct session fields for data loading
+Stack trace:
+load_and_preprocess_data: line 20
+train_model: line 3
+main: line 9
