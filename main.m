@@ -1,0 +1,1 @@
+% Main script for Predictive Maintenance Multi-class Classification\nclear; clc; close all;\n\n% Add all subdirectories to path\naddpath(genpath('src'));\n\n% Load and prepare data\ndata = load_data();\n\n% Preprocess data\n[X, y] = prepare_features(data);\n\n% Train model\nmodel = train_model(X, y);\n\n% Evaluate model\nevaluate_model(model, X, y);\n

@@ -1,0 +1,1 @@
+function model = train_model(X, y)\n    % Train multi-class classification model\n    % TODO: Implement model training\nend\n
