@@ -1,0 +1,7 @@
+Error Details:
+Time: 30-Nov-2024 11:34:11
+Message: Execution of script save_trained_model as a function is not supported:
+D:\#UNIDEB\MatLab\PredictiveMaintenance\src\io\save_trained_model.m
+Stack trace:
+train_model: line 24
+main: line 9

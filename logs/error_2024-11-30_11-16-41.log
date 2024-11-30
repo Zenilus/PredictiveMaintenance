@@ -1,0 +1,6 @@
+Error Details:
+Time: 30-Nov-2024 11:16:41
+Message: Undefined function 'preprocess_features' for input arguments of type 'double'.
+Stack trace:
+train_model: line 76
+main: line 9

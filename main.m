@@ -1,1 +1,23 @@
-% Main script for Predictive Maintenance Multi-class Classification\nclear; clc; close all;\n\n% Add all subdirectories to path\naddpath(genpath('src'));\n\n% Load and prepare data\ndata = load_data();\n\n% Preprocess data\n[X, y] = prepare_features(data);\n\n% Train model\nmodel = train_model(X, y);\n\n% Evaluate model\nevaluate_model(model, X, y);\n
+% main.m
+function main()
+    try
+        % Initialize session
+        session = init_session();
+        
+        % Training phase
+        if session.should_train
+            model = train_model(session);
+        end
+        
+        % Evaluation phase
+        if session.should_evaluate
+            evaluate_model_performance(session, model);
+        end
+        
+        % Clean up
+        cleanup_session(session);
+        
+    catch ME
+        handle_error(ME);
+    end
+end
