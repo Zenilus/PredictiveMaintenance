@@ -1,7 +1,0 @@
-Error Details:
-Time: 30-Nov-2024 12:43:02
-Message: Unrecognized field name "mean".
-Stack trace:
-predict_with_ensemble: line 3
-evaluate_model_performance: line 13
-main: line 14

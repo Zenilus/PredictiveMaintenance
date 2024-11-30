@@ -1,7 +1,0 @@
-Error Details:
-Time: 30-Nov-2024 12:17:37
-Message: Training data and labels must have same number of observations
-Stack trace:
-train_ensemble: line 22
-train_model: line 21
-main: line 9

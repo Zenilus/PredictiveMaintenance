@@ -1,9 +1,0 @@
-Error Details:
-Time: 30-Nov-2024 12:09:08
-Message: Invalid validation data. For image, sequence-to-label, and feature classification tasks, responses must be a vector of categorical responses.
-Stack trace:
-trainNetwork: line 191
-train_single_model: line 33
-train_ensemble: line 25
-train_model: line 21
-main: line 9

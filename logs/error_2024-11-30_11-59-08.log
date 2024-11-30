@@ -1,9 +1,0 @@
-Error Details:
-Time: 30-Nov-2024 11:59:08
-Message: Error using 'forwardLoss' in Layer weightedClassificationLayer. The function threw an error and could not be executed.
-Stack trace:
-trainNetwork: line 191
-train_single_model: line 13
-train_ensemble: line 19
-train_model: line 21
-main: line 9

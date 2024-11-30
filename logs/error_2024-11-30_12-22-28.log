@@ -1,7 +1,0 @@
-Error Details:
-Time: 30-Nov-2024 12:22:28
-Message: Unrecognized field name "data".
-Stack trace:
-load_and_preprocess_data: line 3
-train_model: line 3
-main: line 9

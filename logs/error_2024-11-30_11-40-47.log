@@ -1,7 +1,0 @@
-Error Details:
-Time: 30-Nov-2024 11:40:47
-Message: Unrecognized method, property, or field 'Weights' for class 'nnet.cnn.layer.SoftmaxLayer'.
-Stack trace:
-predict_with_ensemble: line 18
-evaluate_model_performance: line 10
-main: line 14

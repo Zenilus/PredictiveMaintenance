@@ -1,8 +1,0 @@
-Error Details:
-Time: 30-Nov-2024 12:06:32
-Message: Index in position 1 exceeds array bounds. Index must not exceed 7.
-Stack trace:
-train_single_model: line 6
-train_ensemble: line 18
-train_model: line 21
-main: line 9

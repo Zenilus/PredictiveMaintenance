@@ -1,8 +1,0 @@
-Error Details:
-Time: 30-Nov-2024 11:57:25
-Message: Too many input arguments.
-Stack trace:
-create_network_config: line 36
-train_ensemble: line 12
-train_model: line 21
-main: line 9

@@ -1,6 +1,0 @@
-Error Details:
-Time: 30-Nov-2024 12:31:04
-Message: Dimension mismatch: X_train has 6000 samples but Y_train has 42000 labels
-Stack trace:
-train_model: line 24
-main: line 9

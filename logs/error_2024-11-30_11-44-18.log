@@ -1,6 +1,0 @@
-Error Details:
-Time: 30-Nov-2024 11:44:18
-Message: Unrecognized function or variable 'Y_val_idx'.
-Stack trace:
-evaluate_model_performance: line 13
-main: line 14
