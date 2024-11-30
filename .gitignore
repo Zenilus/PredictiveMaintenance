@@ -1,0 +1,9 @@
+# Trained Models
+models/
+
+# MATLAB autosave files
+*.asv
+*.m~
+
+# MATLAB generated files
+*.mat
