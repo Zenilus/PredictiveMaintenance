@@ -25,13 +25,11 @@ function [X_train, X_val, X_test, Y_train, Y_val, Y_test] = prepare_features(dat
     % 5. Combine features
     X = [typeMatrix normalizedFeatures];
     
-    % 6. Prepare labels
-    % Filter failure cases and get failure types
-    failureCases = data.Target == 1;
-    failureTypes = categorical(data.FailureType(failureCases));
-    
-    % Keep only failure cases in features
-    X = X(failureCases, :);
+    % 6. Prepare labels - Modified to include non-failure cases
+    % Create a categorical array for all cases
+    failureTypes = categorical(data.FailureType);
+    % Replace empty failure types with 'No_Failure'
+    failureTypes(failureTypes == '') = 'No_Failure';
     
     % Convert labels to one-hot encoding for neural network
     Y = dummyvar(failureTypes)';
